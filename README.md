@@ -85,8 +85,13 @@ There are two options:
 
 ***1 Manual***
 
-- Download the .ar file from [here](https://github.com/UniqueSecure/MePOSAndroidSDK/tree/master/aars)
+- Download the .aar file from [here](https://github.com/UniqueSecure/MePOSAndroidSDK/tree/master/aars)
+- On your project create a new module (Import AAR Package)
+- Go to project structure
+- Add a app module dependencies on the library
+    - On scope select compile
 
+Continue [here](#creating-a-new-mepos-object)
 
 
 ***2 Gradle Integration***
@@ -464,3 +469,6 @@ unit is plugged in via USB, a call to this method will return false if it is no 
 - MePOS.TEXT_POSITION_RIGHT
 
 ## Sample Codes
+- [MePOS print WIFI/USB](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB)
+- [MePOS print WIFI/USB With decorative LEDs](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB-Decorative-LED)
+- [MePOS WIFI modes](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB-Decorative-LED)
