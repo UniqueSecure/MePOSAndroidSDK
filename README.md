@@ -1,5 +1,12 @@
 # MePOS Connect Android SDK
 
+The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
+currently available for Android and Windows.
+
+This document is a reference on how to integrate to the MePOS unit into your own tablet application. This document
+does not include information on how to set up the MePOS unit, for this please refer to the documentation that came with
+your MePOS unit.
+
 ## Contents
 - [About the MePOS connect SDK](#about-the-mepos-connect-sdk)
 - [Supported tablet devices](#supported-tablet-devices)
@@ -53,15 +60,6 @@
   - [Text style constants](#text-style-constants)
   - [Text size constants](#text-style-constants)
   - [Text position constants](#text-style-constants)
-
-## About the MePOS connect SDK
-
-The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
-currently available for Android and Windows.
-
-This document is a reference on how to integrate to the MePOS unit into your own tablet application. This document
-does not include information on how to set up the MePOS unit, for this please refer to the documentation that came with
-your MePOS unit.
 
 ## Supported tablet devices
 
