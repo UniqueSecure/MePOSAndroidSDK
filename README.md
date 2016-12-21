@@ -1,5 +1,4 @@
-# MePOS Connect SDK user guide V1.10
-# (Android version, updated December 21, 2016)
+# MePOS Connect Android SDK
 
 ## Contents
 - [About the MePOS connect SDK](#about-the-mepos-connect-sdk)
