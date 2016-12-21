@@ -69,7 +69,7 @@ Later releases of the MePOS connect library will introduce libraries for the iOS
 
 ## Supported MePOS devices
 
-The MePOS connect SDK has been tested with the latest MePOS 2.18 firmware.
+The MePOS connect SDK has been tested with the latest MePOS 3.1 firmware.
 
 ## Use of the MePOS connect SDK on Android
 
