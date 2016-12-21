@@ -6,7 +6,6 @@
 - [Supported tablet devices](#supported-tablet-devices)
 - [Supported MePOS devices](#About-the-MePOS-connect-SDK)
 - [Use of the MePOS connect SDK on Android](#use-of-the-mepos-connect-sdk-on-android)
-  - [Version](#Version)
   - [Libraries](#libraries)
   - [(NEW) Gradle integration References](#new-gradle-integration)
   - [Creating a new MePOS object](#creating-a-new-mepos-object)
@@ -76,9 +75,6 @@ Later releases of the MePOS connect library will introduce libraries for the iOS
 The MePOS connect SDK has been tested with the latest MePOS 2.18 firmware.
 
 ## Use of the MePOS connect SDK on Android
-## Version
-
-  The current Android library version is 1.10, details of the latest changes are in the release notes bundled with the Android SDK.
 
 ### Libraries
 The MePOS connect SDK for Android currently includes one library.
