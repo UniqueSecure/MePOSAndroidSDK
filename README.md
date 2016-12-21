@@ -84,9 +84,12 @@ The MePOS connect SDK for Android currently includes one library.
 There are two options:
 
 ***1 Manual***
-Some text
 
-***2 Gradle Integration**
+- Download the .ar file from [here](https://github.com/UniqueSecure/MePOSAndroidSDK/tree/master/aars)
+
+
+
+***2 Gradle Integration***
 
   You can integrate the MePOS connect library using gradle, adding the following configuration to your build.gradle file:
 
@@ -459,3 +462,5 @@ unit is plugged in via USB, a call to this method will return false if it is no 
 - MePOS.TEXT_POSITION_LEFT
 - MePOS.TEXT_POSITION_CENTER
 - MePOS.TEXT_POSITION_RIGHT
+
+## Sample Codes
