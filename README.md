@@ -13,7 +13,7 @@ your MePOS unit.
 - [Supported MePOS devices](#About-the-MePOS-connect-SDK)
 - [Use of the MePOS connect SDK on Android](#use-of-the-mepos-connect-sdk-on-android)
   - [Libraries](#libraries)
-  - [(NEW) Gradle integration References](#new-gradle-integration)
+  - [Gradle integration References](#add-the-sdk-to-your-project)
   - [Creating a new MePOS object](#creating-a-new-mepos-object)
   - [USB Permissions on Android](#usb-permissions-on-android)
 - [MePOS SDK Methods](#mepos-sdk-methods)
@@ -80,7 +80,13 @@ The MePOS connect SDK for Android currently includes one library.
 
   The MePOS connect library is provided for Android as an aar file for use with Android Studio.
 
-### (NEW) Gradle integration
+### Add the SDK to your project
+
+There are two options:
+
+1 Manual
+
+2 Gradle Integration
 
   You can integrate the MePOS connect library using gradle, adding the following configuration to your build.gradle file:
 
