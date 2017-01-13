@@ -117,14 +117,14 @@ dependencies {
 **import com.uniquesecure.meposconnect.*;**
 
 #### Creating a new MePOS object
-  To instantiate a new class to communicate with the MePOS unit you will need to add the following code to your application:
+  To instantiate a new class to communicate with the MePOS unit, you will need to add the following code to your application:
 
 
 ##### MePOS mePOS = new MePOS(context);
 
 
   The above code has now instantiated a MePOS object, the required context parameter is needed for the MePOS class to gain access to the USB device.
-  It is also needed to dispose the instance when the MePOS is disconnected from USB. To archieve this, you will need to add an IntentFilter and a BroadcastReceiver:
+  It is also needed to dispose the instance when the MePOS is disconnected from USB. To achieve this, you will need to add an IntentFilter and a BroadcastReceiver:
 
 ```
 IntentFilter intentFilter = new IntentFilter();
@@ -153,7 +153,7 @@ to use the following constructor:
 
 #### USB Permissions on Android
 
-  For the SDK to work correctly on Android your application must have permission to access the MePOS device.
+  For the SDK to work correctly on Android, your application must have permission to access the MePOS device.
   The following XML in the android manifest will allow the SDK to detect when the MePOS has been connected via USB:
 
 ```
@@ -224,7 +224,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### int print(MePOSReceipt receipt)
 
-  Prints a pre-defined MePOS receipt using the built in receipt printer. To print a receipt, you must first create a MePOS receipt and add lines to it using the add command. This method will return 0 if the receipt was enqued, or 1 otherwise. This method integrates by default a printer queue.
+  Prints a pre-defined MePOS receipt using the built in receipt printer. To print a receipt, you must first create a MePOS receipt and add lines to it using the add command. This method will return 0 if the receipt was queued, or 1 otherwise. This method integrates by default a printer queue.
 
   The below example prints a single line receipt:
 
@@ -245,7 +245,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### int serialRAW(String command)
 
-  The serial raw command allows the user to send commands directly to the DE9 port. This method will return 0 for success or 1 if error happened.
+  The serial raw command allows the user to send commands directly to the DE9 port. This method will return 0 for success or 1 if an  error happened.
 
 ### int cashDrawerStatus() throws MePOSException
 
@@ -256,7 +256,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   *** (NEW) boolean openCashDrawer(boolean validateCashDrawerStatus) throws MePOSException ***
 
-  If any cash drawer connected to the MePOS, this command will try to open it. The method returns true if opened or false if was already opened. If you need to avoid validation of cash drawer status and send the command directly, use ** validateCashDrawerStatus ** as ** false. **
+  If there is any cash drawer connected to the MePOS, this command will try to open it. The method returns true if opens or false if it was already opened. If you need to avoid validation of cash drawer status and send the command directly, use ** validateCashDrawerStatus ** as ** false. **
 
 ### boolean openCashDrawer() throws MePOSException
 
@@ -279,10 +279,10 @@ Will set the MePOS cosmetic LED to one of the following colours:
   - Disables the Wifi module on the MePOS device.
 
 ### String getFWVersion()
-  - Gets the characteristics of the Firmware version as Doc number, article code, revision and date of the firmware.
+  - Gets the characteristics of the firmware version as Doc number, article code, revision and date of the firmware.
 
 ### String getSerialNumber()
-  - Gets the Serial number of the MePOS.
+  - Gets the serial number of the MePOS.
 
 ### MePOSConnectionManager getConnectionManager()
   - Gets the MePOSConnectionManager for the current MePOS instance. The connection manager can be used to set up the Wi-Fi network on the MePOS unit and query the connection state of the MePOS unit.
@@ -314,7 +314,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### String getMACAddress()
 
-  Gets the Mac Address of the MsPOS unit.
+  Gets the Mac Address of the MePOS unit.
 
 ### String getSSID()
 
@@ -343,7 +343,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### boolean MePOSConnectWiFi(String SSID, String IPAddress, String netmask, String encryption, String password)
 
-  Connects the MePOS unit to a WiFi network as a client. After performing a Wi-Fi connection the setConnectionIPAddress method must be called with the provided static IP address or the assigned DHCP IP address using the MePOSGetAssignedIP() method. If the MePOS unit is being used as an access point, connecting to a Wi-Fi network will switch the MePOS to becoming a Wi-Fi client and the MePOS unit will no longer be a Wi-Fi access point. It is only possible to configure the WiFi module when the MePOS unit is plugged in via USB, a call to this method will return false if it is no USB connection is found.
+  Connects the MePOS unit to a WiFi network as a client. After performing a Wi-Fi connection, the setConnectionIPAddress method must be called with the provided static IP address or the assigned DHCP IP address using the MePOSGetAssignedIP() method. If the MePOS unit is being used as an access point, connecting to a Wi-Fi network will switch the MePOS to becoming a Wi-Fi client and the MePOS unit will no longer be a Wi-Fi access point. It is only possible to configure the WiFi module when the MePOS unit is plugged in via USB, a call to this method will return false if no USB connection is found.
 
   Valid input parameters are:
 
@@ -363,7 +363,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
  Sets the MePOS unit in to access point mode. When entering access point mode, the MePOS unit will create its own Wi-Fi network with the SSID, encryption and password provided. In access point mode the MePOS unit will create the IP network 192.168.16.0 and will get the IP address 192.168.16.254. Clients connecting to the
 MePOS unit will be automatically assigned IP addresses via DHCP. If the MePOS unit is connected to a Wi-Fi network as a client, setting the MePOS unit in access point mode will remove the MePOS unit from any Wi-Fi networks it is connected to in client mode. It is only possible to configure the WiFi module when the MePOS
-unit is plugged in via USB, a call to this method will return false if it is no USB connection is found.
+unit is plugged in via USB, a call to this method will return false if no USB connection is found.
 
   SSID – The SSID of the Wi-Fi network you are creating.
 
@@ -414,7 +414,7 @@ unit is plugged in via USB, a call to this method will return false if it is no 
   ***r.AddLine(new MePOSReceiptFeedLine(10);***
 
 ### MePOSReceiptImageLine(Bitmap image)
-  The image line can be used to print black and white raster graphics to the printer. The bitmap provided must be a valid android.graphics.Bitmap for Anroid or System.Drawing.Bitmap for Windows.
+  The image line can be used to print black and white raster graphics to the printer. The bitmap provided must be a valid Android.graphics.Bitmap for Anroid or System.Drawing.Bitmap for Windows.
 
   The following example shows how to add an image to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
@@ -452,7 +452,7 @@ unit is plugged in via USB, a call to this method will return false if it is no 
 - MePOS.TEXT_STYLE_UNDERLINED
 - MePOS.TEXT_STYLE_INVERSE
 
-  Text styles can also be combined using the or operator to achieve a mix of styles, for example to print bold italic text you would use the following:
+  Text styles can also be combined using the "or" operator to achieve a mix of styles, for example to print bold italic text you would use the following:
 - MePOS.TEXT_STYLE_BOLD | MePOS.TEXT_STYLE_ITALIC
 
 ### Text size constants
