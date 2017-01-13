@@ -14,14 +14,14 @@ MePOS Android SDK release notes
 - Stability improvements on cash drawer methods.
 
 ### MePOS 1.9 SDK (November 21, 2016)
-- Added a new constructor on MePOSReceiptBarcodeLine: Now it support personalisation of human-interface readables and height of the barcode.
+- Added a new constructor on MePOSReceiptBarcodeLine: Now it supports personalisation of human-interface readables and height of the barcode.
 - Added a new method to control all the diagnostic LEDs.
 - Improvements on printing queue (removed delay of the first element of the queue).
 - Stability improvements on USB instances.
 
 ### MePOS 1.8 SDK (October 17th, 2016)
 - Improvements on Network configuration methods to configure mepos as Default, AP, Ethernet Client or WiFi Client.
-- Changed implementatoin method: openCashDrawer(). Now it supports a boolean parameter to return true if opened or false cash drawer was already opened.
+- Changed implementation method: openCashDrawer(). Now it supports a boolean parameter to return true if is opened or false if the cash drawer was already opened.
 
 ### MePOS 1.7 SDK (September 26, 2016)
 - Added a cash drawer status method.
@@ -33,6 +33,6 @@ MePOS Android SDK release notes
 - General fixes and stability improvements.
 
 ### MePOS 1.5 (September 1, 2016)
-- Added a new constructor to allow users multiple MePOS instances
-- Added methods to configure mepos as Ethernet Client and Default modes.
-- Stability improvements
+- Added a new constructor to allow users multiple MePOS instances.
+- Added methods to configure MePOS as Ethernet Client and Default modes.
+- Stability improvements.
