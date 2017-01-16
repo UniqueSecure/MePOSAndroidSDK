@@ -151,30 +151,6 @@ to use the following constructor:
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.USB);
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
 
-#### USB Permissions on Android
-
-  For the SDK to work correctly on Android, your application must have permission to access the MePOS device.
-  The following XML in the android manifest will allow the SDK to detect when the MePOS has been connected via USB:
-
-```
-<intent-filter>
- <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
- </intent-filter>
-<meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
- android:resource="@xml/device_filter" />
-```
-
-You will also need to create the file device_filter.xml and place it in the /res/xml folder of your application.
-device_filter.xml should contain the following XML:
-
-```
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
- <!-- 0x2C8E / 0x2404: MePOS Alpha 3 + -->
- <usb-device vendor-id="11406" product-id="9220" />
-</resources>
-```
-
 ### MePOS SDK Methods
 Once a MePOS object has been created there are several methods that can be executed that perform actions on
 the MePOS unit. The method names, syntax and usage are identical across the Android platform. Note that
