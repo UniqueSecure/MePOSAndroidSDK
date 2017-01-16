@@ -9,7 +9,7 @@ your MePOS unit.
 
 ## Contents
 - [Supported tablet devices](#supported-tablet-devices)
-- [Supported MePOS firmware](#Supported-MePOS-firmware)
+- [Supported MePOS firmware](#supported-mepos-firmware)
 - [Use of the MePOS connect SDK on Android](#use-of-the-mepos-connect-sdk-on-android)
   - [Libraries](#libraries)
   - [Add the SDK to your project](#add-the-sdk-to-your-project)
