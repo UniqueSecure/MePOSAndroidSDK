@@ -14,7 +14,7 @@ your MePOS unit.
   - [Libraries](#libraries)
   - [Add the SDK to your project](#add-the-sdk-to-your-project)
   - [Creating a new MePOS object](#creating-a-new-mepos-object)
-  - [USB Permissions on Android](#usb-permissions-on-android)
+  - [General recommendations on Android](#general-recommendations-on-android)
 - [MePOS SDK Methods](#mepos-sdk-methods)
   - [int setDiagnosticLed(int position, int colour)](#int-setdiagnosticledint-position-int-colour)
   - [int setLedOneCol(Integer colour), int setLedTwoCol(Integer colour), int setLedThreeCol(Integer colour)](#int-setledonecolinteger-colour-int-setledtwocolinteger-colour-int-setledthreecolinteger-colour)
@@ -106,7 +106,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.12:@aar'
+ compile 'com.uniquesecure:meposconnect:1.13:@aar'
 }
 ```
 
@@ -116,7 +116,7 @@ dependencies {
 
 **import com.uniquesecure.meposconnect.*;**
 
-#### Creating a new MePOS object
+### Creating a new MePOS object
   To instantiate a new class to communicate with the MePOS unit, you will need to add the following code to your application:
 
 
@@ -150,6 +150,11 @@ to use the following constructor:
 
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.USB);
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
+
+### General recommendations on Android
+- While using another devices connected in the MePOS USB HUB, make sure no other app has been set up as default while connecting the external usb devices in the android Launcher. See [this post for mor info].(http://android.stackexchange.com/questions/148161/how-to-set-home-launcher-in-android-7-0-nougat)
+- Please be noticed that the acknowledgement of USB permissions are not available while the tablet is on sleep mode. Make sure the MePOS instances over USB are created when the tablet is running in foreground.
+
 
 ### MePOS SDK Methods
 Once a MePOS object has been created there are several methods that can be executed that perform actions on
