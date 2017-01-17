@@ -2,7 +2,7 @@ MePOS Android SDK release notes
 ================================
 
 ### MePOS 1.13 SDK (January 16, 2017)
-- Fixed an issue related to USB communication problem when using the MePOS USB hub
+- Enhanced control of USB hub while interacting with third party accessories
 
 ### MePOS 1.12 SDK (January 11, 2017)
 - Fixed an issue of losing data while printing several receipts over USB.
