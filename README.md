@@ -152,7 +152,7 @@ to use the following constructor:
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
 
 ### General recommendations on Android
-- While using another devices connected in the MePOS USB HUB, make sure no other app has been set up as default while connecting the external usb devices in the android Launcher. See [this post for mor info].(http://android.stackexchange.com/questions/148161/how-to-set-home-launcher-in-android-7-0-nougat)
+- While using another devices connected in the MePOS USB HUB, make sure no other app has been set up as default while connecting the external usb devices in the android Launcher. See [this post for more info] (http://android.stackexchange.com/questions/148161/how-to-set-home-launcher-in-android-7-0-nougat).
 - Please be noticed that the acknowledgement of USB permissions are not available while the tablet is on sleep mode. Make sure the MePOS instances over USB are created when the tablet is running in foreground.
 
 
