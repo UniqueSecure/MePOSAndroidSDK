@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.14 SDK (February 8, 2017)
+- Stability improvements on MePOS USB Hub
+
 ### MePOS 1.13 SDK (January 16, 2017)
 - Enhanced control of USB hub while interacting with third party accessories
 
