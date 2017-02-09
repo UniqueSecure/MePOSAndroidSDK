@@ -216,9 +216,12 @@ Will set the MePOS cosmetic LED to one of the following colours:
 ### int success = mePOS.print(r);
 
 
-### int print(MePOSReceipt receipt, MePOSPrinterCallback callback)
+### int print(MePOSReceipt receipt, MePOSPrinterCallback callback);
 
   Prints a pre-defined MePOS receipt using the built in receipt printer. When MePOS starts or finishes a receipt, it will call onPrinterStarted(), onPrinterCompleted() or onPrinterError(). This method also integrates by default a printer queue.
+
+### receipt.addLine(new MePOSReceiptImageLine(getBitmapFromAsset(context, "ic_launcher.bmp")));
+ Prints a bmp image. The size should be 576 x 200 pixel
 
 ### int printRAW(String command)
 
