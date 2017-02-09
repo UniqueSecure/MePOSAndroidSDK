@@ -21,7 +21,6 @@ your MePOS unit.
   - [int setCosmeticLedCol(Integer colour)](#int-setcosmeticledcolinteger-colour)
   - [boolean printerBusy()](#boolean-printerbusy)
   - [int print(MePOSReceipt receipt)](#int-printmeposreceipt-receipt)
-  - [int print image receipt](#receiptaddlinenew-meposreceiptimagelinegetbitmapfromassetcontext-ic_launcherbmp)
   - [int print(MePOSReceipt receipt, MePOSPrinterCallback callback)]()
   - [int printRAW(String command)](#meposreceipt-r--new-meposreceipt)
   - [int serialRAW(String command)](#int-printrawstring-command)
@@ -221,9 +220,6 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   Prints a pre-defined MePOS receipt using the built in receipt printer. When MePOS starts or finishes a receipt, it will call onPrinterStarted(), onPrinterCompleted() or onPrinterError(). This method also integrates by default a printer queue.
 
-### receipt.addLine(new MePOSReceiptImageLine(getBitmapFromAsset(context, "ic_launcher.bmp")));
- Prints a bmp image. The size should be 576 x 200 pixel
-
 ### int printRAW(String command)
 
   The raw print command allows the user to send ESC POS commands directly to the printer without using the receipt builder. This function is useful if your epos system already prints using the ESC POS command set. This method will return 0 for success, 1 if no MePOS is connected or 2 if the printer is busy.
@@ -399,7 +395,7 @@ unit is plugged in via USB, a call to this method will return false if no USB co
   ***r.AddLine(new MePOSReceiptFeedLine(10);***
 
 ### MePOSReceiptImageLine(Bitmap image)
-  The image line can be used to print black and white raster graphics to the printer. The bitmap provided must be a valid Android.graphics.Bitmap for Anroid or System.Drawing.Bitmap for Windows.
+  The image line can be used to print black and white raster graphics to the printer. The bitmap provided must be a valid Android.graphics.Bitmap for Anroid or System.Drawing.Bitmap for Windows, the image size should be 576 x 200 pixels
 
   The following example shows how to add an image to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
