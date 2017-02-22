@@ -154,6 +154,7 @@ to use the following constructor:
 ### General recommendations on Android
 - While using another devices connected in the MePOS USB HUB, make sure no other app has been set up as default while connecting the external usb devices in the android Launcher. See [this post for more info] (http://android.stackexchange.com/questions/148161/how-to-set-home-launcher-in-android-7-0-nougat).
 - Please be noticed that the acknowledgement of USB permissions are not available while the tablet is on sleep mode. Make sure the MePOS instances over USB are created when the tablet is running in foreground.
+- If you are using a **BroadcastReceiver** to detect when the tablet is attached to the MePOS please be aware of the general lifecycle on Activities/Fragments/Application in Android development. Note that some of the methods **onPause()** or **onResume()** are triggered when detecting an attach/detach. See this example: If you connect a usb device on the MePOS and then connect it to the tablet, the onReceive method would be called. This might detect your usb accesory ***or*** the mePOS. If you then call the **unregisterReceiver(broadcastReceiver)** on the **onPause()** method you might not detect next when the next USB device is connected, and that would be the MePOS. As a result in this example you won't detect for the attachment correctly.
 
 
 ### MePOS SDK Methods
