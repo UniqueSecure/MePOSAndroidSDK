@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.15 SDK (February 22, 2017)
+- Improved printing speed on Wifi/Ethernet connectivity
+
 ### MePOS 1.14 SDK (February 8, 2017)
 - Stability improvements on MePOS USB Hub
 
