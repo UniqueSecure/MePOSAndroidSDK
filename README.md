@@ -59,6 +59,7 @@ your MePOS unit.
   - [Text style constants](#text-style-constants)
   - [Text size constants](#text-style-constants)
   - [Text position constants](#text-style-constants)
+- [Contact](#contact)
 
 ## Supported tablet devices
 
@@ -454,3 +455,7 @@ unit is plugged in via USB, a call to this method will return false if no USB co
 - [MePOS print WIFI/USB](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB)
 - [MePOS print WIFI/USB With decorative LEDs](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB-Decorative-LED)
 - [MePOS WIFI modes](https://github.com/UniqueSecure/WifiModesExample)
+
+## Contact
+
+Please rise a ticket on [MePOS Support](https://mepos.zendesk.com/hc/en-us/requests/new)
