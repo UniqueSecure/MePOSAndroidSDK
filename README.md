@@ -21,7 +21,7 @@ your MePOS unit.
   - [int setCosmeticLedCol(Integer colour)](#int-setcosmeticledcolinteger-colour)
   - [boolean printerBusy()](#boolean-printerbusy)
   - [int print(MePOSReceipt receipt)](#int-printmeposreceipt-receipt)
-  - [int print(MePOSReceipt receipt, MePOSPrinterCallback callback)]()
+  - [int print(MePOSReceipt receipt, MePOSPrinterCallback callback)]()
   - [int printRAW(String command)](#meposreceipt-r--new-meposreceipt)
   - [int serialRAW(String command)](#int-printrawstring-command)
   - [int cashDrawerStatus() throws MePOSException](#int-cashdrawerstatus-throws-meposexception)
@@ -60,6 +60,7 @@ your MePOS unit.
   - [Text style constants](#text-style-constants)
   - [Text size constants](#text-style-constants)
   - [Text position constants](#text-style-constants)
+- [Contact](#contact)
 
 ## Supported tablet devices
 
@@ -156,6 +157,7 @@ to use the following constructor:
 ### General recommendations on Android
 - While using another devices connected in the MePOS USB HUB, make sure no other app has been set up as default while connecting the external usb devices in the android Launcher. See [this post for more info] (http://android.stackexchange.com/questions/148161/how-to-set-home-launcher-in-android-7-0-nougat).
 - Please be noticed that the acknowledgement of USB permissions are not available while the tablet is on sleep mode. Make sure the MePOS instances over USB are created when the tablet is running in foreground.
+- If you are using a **BroadcastReceiver** to detect when the tablet is attached to the MePOS please be aware of the general lifecycle on Activities/Fragments/Application in Android development. Note that some of the methods **onPause()** or **onResume()** are triggered when detecting an attach/detach. See this example: If you connect a usb device on the MePOS and then connect it to the tablet, the onReceive method would be called. This might detect your usb accesory ***or*** the mePOS. If you then call the **unregisterReceiver(broadcastReceiver)** on the **onPause()** method you might not detect next when the next USB device is connected, and that would be the MePOS. As a result in this example you won't detect for the attachment correctly.
 
 
 ### MePOS SDK Methods
@@ -218,7 +220,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 ### int success = mePOS.print(r);
 
 
-### int print(MePOSReceipt receipt, MePOSPrinterCallback callback)
+### int print(MePOSReceipt receipt, MePOSPrinterCallback callback);
 
   Prints a pre-defined MePOS receipt using the built in receipt printer. When MePOS starts or finishes a receipt, it will call onPrinterStarted(), onPrinterCompleted() or onPrinterError(). This method also integrates by default a printer queue.
 
@@ -401,7 +403,7 @@ unit is plugged in via USB, a call to this method will return false if no USB co
   ***r.AddLine(new MePOSReceiptFeedLine(10);***
 
 ### MePOSReceiptImageLine(Bitmap image)
-  The image line can be used to print black and white raster graphics to the printer. The bitmap provided must be a valid Android.graphics.Bitmap for Anroid or System.Drawing.Bitmap for Windows.
+  The image line can be used to print black and white raster graphics to the printer. The bitmap provided must be a valid Android.graphics.Bitmap for Anroid or System.Drawing.Bitmap for Windows, the image size should be 576 x 200 pixels
 
   The following example shows how to add an image to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
@@ -459,3 +461,7 @@ unit is plugged in via USB, a call to this method will return false if no USB co
 - [MePOS print WIFI/USB](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB)
 - [MePOS print WIFI/USB With decorative LEDs](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB-Decorative-LED)
 - [MePOS WIFI modes](https://github.com/UniqueSecure/WifiModesExample)
+
+## Contact
+
+Please rise a ticket on [MePOS Support](https://mepos.zendesk.com/hc/en-us/requests/new)
