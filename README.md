@@ -25,7 +25,7 @@ your MePOS unit.
   - [int printRAW(String command)](#meposreceipt-r--new-meposreceipt)
   - [int serialRAW(String command)](#int-printrawstring-command)
   - [int cashDrawerStatus() throws MePOSException](#int-cashdrawerstatus-throws-meposexception)
-  - [(NEW) boolean openCashDrawer(boolean validateCashDrawerStatus) throws MePOSException](#boolean-opencashdrawer-throws-meposexception)
+  - [boolean openCashDrawer(boolean validateCashDrawerStatus) throws MePOSException](#boolean-opencashdrawer-throws-meposexception)
   - [boolean openCashDrawer() throws MePOSException](#boolean-opencashdrawer-throws-meposexception)
   - [int enableUSB() throws MePOSException](#int-enableusb-throws-meposexception)
   - [int disableUSB() throws MePOSException](#int-disableusb-throws-meposexception)
@@ -37,6 +37,7 @@ your MePOS unit.
 - [MePOSConnectionManager](#meposconnectionmanager)
   - [int getConnectionStatus()](#int-getconnectionstatus)
   - [setConnectionIPAddress(string IPAddress)](#setconnectionipaddressstring-ipaddress)
+  - [setConnectionPort(int port)](#setconnectionportint-port)
   - [String getConnectionIPAddress()](#string-meposgetassignedip)
   - [String MePOSGetAssignedIP()](#string-meposgetassignedip)
   - [String getMACAddress()](#string-getmacaddress)
@@ -65,7 +66,6 @@ your MePOS unit.
 
 The MePOS connect library supports Android tablets and Windows PC’s via a USB and Wi-Fi connection. Due to the
 restrictions of the iOS platform it is not possible to connect to the MePOS unit via USB from an Apple device.
-Later releases of the MePOS connect library will introduce libraries for the iOS platform.
 
 ## Supported MePOS firmware
 
@@ -107,7 +107,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.15:@aar'
+ compile 'com.uniquesecure:meposconnect:1.17:@aar'
 }
 ```
 
@@ -151,6 +151,8 @@ to use the following constructor:
 
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.USB);
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
+##### MePOS mePOS = new MePOS(context, MePOSConnectionType.GENERIC_USB);
+##### MePOS mePOS = new MePOS(context, MePOSConnectionType.GENERIC_WIFI);
 
 ### General recommendations on Android
 - While using another devices connected in the MePOS USB HUB, make sure no other app has been set up as default while connecting the external usb devices in the android Launcher. See [this post for more info] (http://android.stackexchange.com/questions/148161/how-to-set-home-launcher-in-android-7-0-nougat).
@@ -211,9 +213,9 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   The below example prints a single line receipt:
 
-### MePOSReceipt r = new MePOSReceipt();
-
-  *** r.addLine(new MePOSReceiptTextLine(“Hello World”, MePOS.TEXT_STYLE_BOLD, MePOS.TEXT_SIZE_WIDE, MePOS.TEXT_POSITION_CENTER)); ***  
+```java
+    MePOSReceipt r = new MePOSReceipt();
+    r.addLine(new MePOSReceiptTextLine(“Hello World”, MePOS.TEXT_STYLE_BOLD, MePOS.TEXT_SIZE_WIDE, MePOS.TEXT_POSITION_CENTER)); ***  
 
 ### int success = mePOS.print(r);
 
@@ -237,7 +239,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
   - MePOS.CASH_DRAWER_STATUS_OPENED (0)
   - MePOS.CASH_DRAWER_STATUS_CLOSED(1).
 
-  *** (NEW) boolean openCashDrawer(boolean validateCashDrawerStatus) throws MePOSException ***
+### boolean openCashDrawer(boolean validateCashDrawerStatus) throws MePOSException
 
   If there is any cash drawer connected to the MePOS, this command will try to open it. The method returns true if opens or false if it was already opened. If you need to avoid validation of cash drawer status and send the command directly, use ** validateCashDrawerStatus ** as ** false. **
 
@@ -286,6 +288,10 @@ Will set the MePOS cosmetic LED to one of the following colours:
 ### setConnectionIPAddress(string IPAddress)
 
   Sets the IP address on which the connection manager will look for a MePOS unit. The default IP address of the MePOS from the factory is 192.168.16.254, if the tablet is connecting to the MePOS as a client then you will not need to change this parameter unless the network settings on the MePOS unit have been changed.
+  
+### setConnectionPort(int port)
+
+	Sets the tcp port on which the connection manager will look for a MePOS unit. The default port is 8080, but if you are controlling a generic esc/pos device you might want to change it to 9100.
 
 ### String getConnectionIPAddress()
 
@@ -386,7 +392,7 @@ unit is plugged in via USB, a call to this method will return false if no USB co
 
   By default, the Barcode prints a human-interface readable string below, and a defined height of around 0.35 inches. If you want to customise the height or the hri, please use this constructor instead:
 ### new MePOSReceiptBarcodeLine(MePOS.BARCODE_TYPE_CODE39, MePOS.BARCODE_HRI_NONE, 0.50, “Hello World!”);
-  Please note that the height is *** not customisable *** on *** PDF 417 *** barcodes.
+  Please note that the height is ***not customisable*** on ***PDF 417*** barcodes.
 
 ### MePOSReceiptFeedLine(int lines)
 
