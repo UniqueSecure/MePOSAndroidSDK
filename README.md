@@ -215,7 +215,8 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ```java
     MePOSReceipt r = new MePOSReceipt();
-    r.addLine(new MePOSReceiptTextLine(“Hello World”, MePOS.TEXT_STYLE_BOLD, MePOS.TEXT_SIZE_WIDE, MePOS.TEXT_POSITION_CENTER)); ***  
+    r.addLine(new MePOSReceiptTextLine(“Hello World”, MePOS.TEXT_STYLE_BOLD, MePOS.TEXT_SIZE_WIDE, MePOS.TEXT_POSITION_CENTER));
+```
 
 ### int success = mePOS.print(r);
 
