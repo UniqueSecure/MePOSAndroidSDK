@@ -292,7 +292,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
   
 ### setConnectionPort(int port)
 
-	Sets the tcp port on which the connection manager will look for a MePOS unit. The default port is 8080, but if you are controlling a generic esc/pos device you might want to change it to 9100.
+  Sets the tcp port on which the connection manager will look for a MePOS unit. The default port is 8080, but if you are controlling a generic esc/pos device you might want to change it to 9100.
 
 ### String getConnectionIPAddress()
 
