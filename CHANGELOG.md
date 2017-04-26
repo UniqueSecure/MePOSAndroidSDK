@@ -1,6 +1,12 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.17 SDK (April 25, 2017)
+- Added support to cash drawer open on generic esc/pos systems
+
+### MePOS 1.16 SDK (March 30, 2017)
+- Added support for generic printers
+
 ### MePOS 1.15 SDK (February 22, 2017)
 - Improved printing speed on Wifi/Ethernet connectivity
 
