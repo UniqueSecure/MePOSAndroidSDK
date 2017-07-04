@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.18 SDK (July 04, 2017)
+- Fixed an issue related to hanging the communications via TCP if there were no MePOS on that IP Address
+
 ### MePOS 1.17 SDK (April 25, 2017)
 - Added support to cash drawer open on generic esc/pos systems
 
