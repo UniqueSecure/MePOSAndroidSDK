@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.18.2 SDK (August 30, 2017)
+- (HOTFIX) Fixed an issue related to wifi communication of complex receipts (bmp images printing slow or malfunctioning)
+
 ### MePOS 1.18 SDK (July 04, 2017)
 - Fixed an issue related to hanging the communications via TCP if there were no MePOS on that IP Address
 
