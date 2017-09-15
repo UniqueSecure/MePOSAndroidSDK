@@ -465,7 +465,7 @@ unit is plugged in via USB, a call to this method will return false if no USB co
 - [MePOS WIFI modes](https://github.com/UniqueSecure/WifiModesExample)
 
 ## MePOS PRO Emulator
-If you don't have a physicall MePOS PRO unit you can download the MePOS PRO Emulator [here](http://sdk.mepos.io/MePOSEmulator_v_0_3.zip)
+If you don't have a MePOS PRO unit you can download the MePOS PRO Emulator [here](http://sdk.mepos.io/MePOSEmulator_v_0_3.zip)
 
 ## Contact
 
