@@ -60,6 +60,7 @@ your MePOS unit.
   - [Text style constants](#text-style-constants)
   - [Text size constants](#text-style-constants)
   - [Text position constants](#text-style-constants)
+- [MePOS PRO Emulator](#mepos-pro-emulator)
 - [Contact](#contact)
 
 ## Supported tablet devices
@@ -462,6 +463,9 @@ unit is plugged in via USB, a call to this method will return false if no USB co
 - [MePOS print WIFI/USB](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB)
 - [MePOS print WIFI/USB With decorative LEDs](https://github.com/UniqueSecure/MePOS-Print-button-WIFI-USB-Decorative-LED)
 - [MePOS WIFI modes](https://github.com/UniqueSecure/WifiModesExample)
+
+## MePOS PRO Emulator
+If you don't have a physicall MePOS PRO unit you can download the MePOS PRO Emulator [here](http://sdk.mepos.io/MePOSEmulator_v_0_3.zip)
 
 ## Contact
 
