@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.18.3 SDK (October 6, 2017)
+- Added a feed line at the end when printing receipts with a partial cut.
+
 ### MePOS 1.18.2 SDK (August 30, 2017)
 - (HOTFIX) Fixed an issue related to wifi communication of complex receipts (bmp images printing slow or malfunctioning)
 
