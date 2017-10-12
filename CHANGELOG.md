@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.18.4 SDK (October 12, 2017)
+- Fix of feed line of receipts with partial cut.
+
 ### MePOS 1.18.3 SDK (October 6, 2017)
 - Added a feed line at the end when printing receipts with a partial cut.
 
