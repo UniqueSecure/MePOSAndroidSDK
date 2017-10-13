@@ -131,7 +131,7 @@ dependencies {
   The above code has now instantiated a MePOS object, the required context parameter is needed for the MePOS class to gain access to the USB device.
   It is also needed to dispose the instance when the MePOS is disconnected from USB. To achieve this, you will need to add an IntentFilter and a BroadcastReceiver:
 
-```
+```java
 IntentFilter intentFilter = new IntentFilter();
 intentFilter.addAction("android.hardware.usb.action.USB_DEVICE_ATTACHED");
 intentFilter.addAction("android.hardware.usb.action.USB_DEVICE_DETACHED");
