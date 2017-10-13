@@ -21,7 +21,7 @@ your MePOS unit.
   - [int setCosmeticLedCol(Integer colour)](#int-setcosmeticledcolinteger-colour)
   - [boolean printerBusy()](#boolean-printerbusy)
   - [int print(MePOSReceipt receipt)](#int-printmeposreceipt-receipt)
-  - [int print(MePOSReceipt receipt, MePOSPrinterCallback callback)]()
+  - [int print(MePOSReceipt receipt, MePOSPrinterCallback callback)](#int-printmeposreceipt-receipt-meposprintercallback-callback)
   - [int printRAW(String command)](#meposreceipt-r--new-meposreceipt)
   - [int serialRAW(String command)](#int-printrawstring-command)
   - [int cashDrawerStatus() throws MePOSException](#int-cashdrawerstatus-throws-meposexception)
@@ -50,6 +50,9 @@ your MePOS unit.
   - [boolean MePOSSetAccessPoint(String SSID, String encryption, String password)](#boolean-meposconnectwifistring-ssid-string-ipaddress-string-netmask-string-encryption-string-password)
 - [MePOSReceipt](#meposreceipt)
   - [setCutType(int cutType)](#setcuttypeint-cuttype)
+  - [setHeaderFeed(int headerFeed)](#setheaderfeedint-headerfeed)
+  - [setFooterFeed(int footerFeed)](#setfooterfeedint-footerfeed)
+  - [setFeedAfterCut(int feedLines)](#setfeedaftercutint-feedlines)
   - [MePOSReceiptBarcodeLine(int type, String data)](#meposreceiptbarcodelineint-type-string-data)
   - [MePOSReceiptFeedLine(int lines)](#meposreceiptfeedlineint-lines)
   - [MePOSReceiptImageLine(Bitmap image)](#meposreceiptimagelinebitmap-image)
@@ -108,7 +111,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.18.4:@aar'
+ compile 'com.uniquesecure:meposconnect:1.19.1:@aar'
 }
 ```
 
@@ -217,10 +220,12 @@ Will set the MePOS cosmetic LED to one of the following colours:
 ```java
     MePOSReceipt r = new MePOSReceipt();
     r.addLine(new MePOSReceiptTextLine(“Hello World”, MePOS.TEXT_STYLE_BOLD, MePOS.TEXT_SIZE_WIDE, MePOS.TEXT_POSITION_CENTER));
+	int success = mePOS.print(r);
 ```
 
-### int success = mePOS.print(r);
-
+### int print(MePOSReceipt receipt, MePOSPrinterCallback callback)
+  
+  Same as above, but adding a `MePOSPrinterCallback` implementation to handle events as `onPrinterStarted`, `onPrinterCompleted` or `onPrinterError`.
 
 ### int print(MePOSReceipt receipt, MePOSPrinterCallback callback);
 
@@ -378,9 +383,24 @@ unit is plugged in via USB, a call to this method will return false if no USB co
   Specifies whether to perform a full or partial cut at the end of the receipt where the cut type is:
   - MePOS.CUT_TYPE_FULL
   - MePOS.CUT_TYPE_PARTIAL
-
+  
   Once the receipt has been created you can modify how the printer will cut the receipt after it has finished printing. As a default the printer is set to perform a full receipt cut.
+  
+  By configuring this value as `MePOS.CUT_TYPE_PARTIAL` the `feedAfterCut` will override internally to 4 lines. if you need to specify the number of lines after the paper cut you'll need to call (setFeedAfterCut(int feedLines)[#setfeedaftercutint-feedlines]) after the cut type configuration.
+  
+### setHeaderFeed(int headerFeed)
 
+  Specifies the number of feed lines before starting to print the receipt content. As a default is configured to 0 lines.
+  
+### setFooterFeed(int footerFeed)
+
+  Specifies the number of feed lines after printing the receipt, but before the paper cut. As a default is configured to 12 lines.
+  
+  
+### setFeedAfterCut(int feedLines)
+  Specifies the number of feed lines after cutting the receipt. As a default is configured to 0 lines.
+  
+  
 ### MePOSReceiptBarcodeLine(int type, String data)
   The barcode line can be used to add a barcode to a receipt. There are currently three supported barcode types, UPC-A, Code 39 and PDF417. They are specified using the following constants:
 
