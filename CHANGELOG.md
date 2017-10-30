@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.19.2 SDK (October 30, 2017)
+- Improved stability when printing and doing cash drawer changes.
+
 ### MePOS 1.19.1 SDK (October 13, 2017)
 - Improved stability when printing and doing I/O changes such as cosmetic, diagnostic or cash drawer changes while printing a receipt.
 - Added: setFeedAfterCut() in the MePOSReceipt class to handle feed lines after a paper cut.
