@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.20.1 SDK (November 6, 2017)
+- Added methods to enable/disable the cosmetic LED rotating button.
+
 ### MePOS 1.19.2 SDK (October 30, 2017)
 - Improved stability when printing and doing cash drawer changes.
 

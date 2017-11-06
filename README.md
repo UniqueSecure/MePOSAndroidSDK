@@ -1,4 +1,4 @@
-# MePOS Connect Android SDK
+# MePOS Connect Android SDK version 1.20.1
 
 The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
 currently available for Android and Windows.
@@ -27,10 +27,12 @@ your MePOS unit.
   - [int cashDrawerStatus() throws MePOSException](#int-cashdrawerstatus-throws-meposexception)
   - [boolean openCashDrawer(boolean validateCashDrawerStatus) throws MePOSException](#boolean-opencashdrawer-throws-meposexception)
   - [boolean openCashDrawer() throws MePOSException](#boolean-opencashdrawer-throws-meposexception)
-  - [int enableUSB() throws MePOSException](#int-enableusb-throws-meposexception)
-  - [int disableUSB() throws MePOSException](#int-disableusb-throws-meposexception)
-  - [int enableWifi() throws MePOSException](#int-enablewifi-throws-meposexception)
-  - [int disableWifi() throws MePOSException](#int-disablewifi-throws-meposexception)
+  - [void enableUSB() throws MePOSException](#void-enableusb-throws-meposexception)
+  - [void disableUSB() throws MePOSException](#void-disableusb-throws-meposexception)
+  - [void enableWifi() throws MePOSException](#void-enablewifi-throws-meposexception)
+  - [void disableWifi() throws MePOSException](#void-disablewifi-throws-meposexception)
+  - [void enableCosmeticLEDButton() throws MePOSException](void-enablecosmeticledbutton-throws-meposexception)
+  - [void disableCosmeticLEDButton() throws MePOSException](void-disablecosmeticledbutton-throws-meposexception)
   - [String getFWVersion()](#string-getfwversion)
   - [String getSerialNumber()](#string-getserialnumber)
   - [MePOSConnectionManager getConnectionManager()](#meposconnectionmanager)
@@ -111,7 +113,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.19.2:@aar'
+ compile 'com.uniquesecure:meposconnect:1.20.1:@aar'
 }
 ```
 
@@ -254,21 +256,29 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   - Same as openCashDrawer(true).
 
-### int enableUSB() throws MePOSException
+### void enableUSB() throws MePOSException
 
   - Enables the USB ports on the MePOS device.
 
-### int disableUSB() throws MePOSException
+### void disableUSB() throws MePOSException
 
   - Disables the USB ports on the MePOS device.
 
-### int enableWifi() throws MePOSException
+### void enableWifi() throws MePOSException
 
   - Enables the Wifi module on the MePOS device.
 
-### int disableWifi() throws MePOSException
+### void disableWifi() throws MePOSException
 
   - Disables the Wifi module on the MePOS device.
+  
+### void enableCosmeticLEDButton() throws MePOSException
+
+  - Enables the cosmetic LED rotating button.
+
+### void disableCosmeticLEDButton() throws MePOSException
+
+  - Disables the cosmetic LED rotating button.
 
 ### String getFWVersion()
   - Gets the characteristics of the firmware version as Doc number, article code, revision and date of the firmware.
