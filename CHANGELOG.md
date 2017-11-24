@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.21.1 SDK (November 11, 2017)
+- Added logging info levels.
+
 ### MePOS 1.20.1 SDK (November 6, 2017)
 - Added methods to enable/disable the cosmetic LED rotating button.
 

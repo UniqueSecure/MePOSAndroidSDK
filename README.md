@@ -1,4 +1,4 @@
-# MePOS Connect Android SDK version 1.20.1
+# MePOS Connect Android SDK version 1.21.1
 
 The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
 currently available for Android and Windows.
@@ -14,6 +14,7 @@ your MePOS unit.
   - [Libraries](#libraries)
   - [Add the SDK to your project](#add-the-sdk-to-your-project)
   - [Creating a new MePOS object](#creating-a-new-mepos-object)
+  - [Adding log levels](#adding-log-levels)
   - [General recommendations on Android](#general-recommendations-on-android)
 - [MePOS SDK Methods](#mepos-sdk-methods)
   - [int setDiagnosticLed(int position, int colour)](#int-setdiagnosticledint-position-int-colour)
@@ -113,7 +114,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.20.1:@aar'
+ compile 'com.uniquesecure:meposconnect:1.21.1:@aar'
 }
 ```
 
@@ -159,6 +160,20 @@ to use the following constructor:
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.WIFI);
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.GENERIC_USB);
 ##### MePOS mePOS = new MePOS(context, MePOSConnectionType.GENERIC_WIFI);
+
+### Adding log levels
+
+If you need to output info to the logcat you can define the logging levels using the following code
+
+```java
+mepos.setLoggingLevel(MePOSLogger.LEVEL_TRACE); //trace level
+mepos.setLoggingLevel(MePOSLogger.LEVEL_DEBUG); //debug level
+mepos.setLoggingLevel(MePOSLogger.LEVEL_INFO); //info elvel 
+mepos.setLoggingLevel(MePOSLogger.LEVEL_ERROR); //error level
+
+```
+
+By default the Log is set to `LEVEL_ERROR`.
 
 ### General recommendations on Android
 - While using another devices connected in the MePOS USB HUB, make sure no other app has been set up as default while connecting the external usb devices in the android Launcher. See <a href="http://android.stackexchange.com/questions/148161/how-to-set-home-launcher-in-android-7-0-nougat" target="_blank"> this post for more info </a>.
