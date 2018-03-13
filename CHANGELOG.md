@@ -1,7 +1,7 @@
 MePOS Android SDK release notes
 ================================
 
-### MePOS 1.23 SDK (March, 2018)
+### MePOS 1.22 SDK (March, 2018)
 - Added full duplex communication with MePOS.
 
 ### MePOS 1.21.1 SDK (November 11, 2017)
