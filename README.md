@@ -1,4 +1,4 @@
-# MePOS Connect Android SDK version 1.21.1
+# MePOS Connect Android SDK version 1.22
 
 The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
 currently available for Android and Windows.
