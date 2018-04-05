@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.22.1 SDK (April, 2018)
+- MePOSGetAssignedIP returns "0.0.0.0" when the WiFi client configuration failed.
+
 ### MePOS 1.22 SDK (March, 2018)
 - Added full duplex communication with MePOS.
 
