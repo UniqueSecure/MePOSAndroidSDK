@@ -39,7 +39,7 @@ your MePOS unit.
   - [MePOSConnectionManager getConnectionManager()](#meposconnectionmanager)
 - [MePOSConnectionManager](#meposconnectionmanager)
   - [int getConnectionStatus()](#int-getconnectionstatus)
-  - [void terminateCommunication()](#void-terminatecommunication)
+  - [terminateCommunication()](#terminatecommunication)
   - [setConnectionIPAddress(string IPAddress)](#setconnectionipaddressstring-ipaddress)
   - [setConnectionPort(int port)](#setconnectionportint-port)
   - [String getConnectionIPAddress()](#string-meposgetassignedip)
@@ -297,12 +297,15 @@ Will set the MePOS cosmetic LED to one of the following colours:
   - Disables the cosmetic LED rotating button.
 
 ### String getFWVersion()
+
   - Gets the characteristics of the firmware version as Doc number, article code, revision and date of the firmware.
 
 ### String getSerialNumber()
+
   - Gets the serial number of the MePOS.
 
 ### MePOSConnectionManager getConnectionManager()
+
   - Gets the MePOSConnectionManager for the current MePOS instance. The connection manager can be used to set up the Wi-Fi network on the MePOS unit and query the connection state of the MePOS unit.
 
 ### MePOSConnectionManager
@@ -310,6 +313,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
   The MePOSConnectionManager can be used to configure the connection settings for the MePOS unit and to configure the Wi-Fi module on a MePOS unit. The methods of this interface will not respond immediately, and is encouraged to the user to execute it asynchronously.
 
 ### int getConnectionStatus()
+
   Gets the current connection state of the MePOS unit:
 
   -1 = Not initialised
@@ -332,7 +336,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### String getConnectionIPAddress()
 
-  Gets the current IP address setting for the connection manager.
+  Gets the current IP address setting for the connection manager, this method returns "0.0.0.0" when the WiFi client configurations fails.
 
 ### String MePOSGetAssignedIP()
 
