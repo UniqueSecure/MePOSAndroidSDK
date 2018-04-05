@@ -1,4 +1,4 @@
-# MePOS Connect Android SDK version 1.22
+# MePOS Connect Android SDK version 1.22.1
 
 The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
 currently available for Android and Windows.
@@ -39,6 +39,7 @@ your MePOS unit.
   - [MePOSConnectionManager getConnectionManager()](#meposconnectionmanager)
 - [MePOSConnectionManager](#meposconnectionmanager)
   - [int getConnectionStatus()](#int-getconnectionstatus)
+  - [void terminateCommunication()](#void-terminatecommunication)
   - [setConnectionIPAddress(string IPAddress)](#setconnectionipaddressstring-ipaddress)
   - [setConnectionPort(int port)](#setconnectionportint-port)
   - [String getConnectionIPAddress()](#string-meposgetassignedip)
@@ -316,6 +317,10 @@ Will set the MePOS cosmetic LED to one of the following colours:
   0 = Not connected
 
   1 = Connected
+
+### terminateCommunication()
+
+  Terminates the bidirectional communication with the MePOS, it is good practice to call this method when not interested in receiving notifications from MePOS.
 
 ### setConnectionIPAddress(string IPAddress)
 
