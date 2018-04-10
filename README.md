@@ -115,7 +115,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.21.1:@aar'
+ compile 'com.uniquesecure:meposconnect:1.22.2:@aar'
 }
 ```
 
