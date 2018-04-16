@@ -1,6 +1,12 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.22.2.2 SDK (April 16, 2018)
+- Fixed issues with enableUSB(), disableUSB(), enableWifi() and disableWifi() methods.
+
+### MePOS 1.22.2.1 SDK (April 10, 2018)
+- Fixed issues with WiFi configuration timing.
+
 ### MePOS 1.22.2 SDK (April 4, 2018)
 - Fixed several issues with MePOS WiFi configuration and instance creation.
 
