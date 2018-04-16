@@ -1,4 +1,4 @@
-# MePOS Connect Android SDK version 1.22.2
+# MePOS Connect Android SDK version 1.22.2.2
 
 The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
 currently available for Android and Windows.
@@ -115,7 +115,7 @@ repositories {
 
 ```
 dependencies {
- compile 'com.uniquesecure:meposconnect:1.22.2:@aar'
+ compile 'com.uniquesecure:meposconnect:1.22.2.2:@aar'
 }
 ```
 
@@ -274,11 +274,11 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### void enableUSB() throws MePOSException
 
-  - Enables the USB ports on the MePOS device.
+  - Enables the USB ports on the MePOS device. It must be noted that, due to the nature of the USB architecture in the MePOS, the USB connection with the MePOS (if any) will reset, and a new USB instance must be created to give the apropriate permissions to the application to communicate with the devices as if the devices were physically unpluged and pluged back again.
 
 ### void disableUSB() throws MePOSException
 
-  - Disables the USB ports on the MePOS device.
+  - Disables the USB ports on the MePOS device. It must be noted that, due to the nature of the USB architecture in the MePOS, the USB connection with the MePOS (if any) will reset, and a new USB instance must be created to give the apropriate permissions to the application to communicate with the devices as if the devices were physically unpluged and pluged back again.
 
 ### void enableWifi() throws MePOSException
 
@@ -286,7 +286,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### void disableWifi() throws MePOSException
 
-  - Disables the Wifi module on the MePOS device.
+  - Disables the Wifi module on the MePOS device. It must be noted that, if working with a WiFi instance, the communication after this method will be interruped, to re-enable WiFi communication a USB instance will be needed.
   
 ### void enableCosmeticLEDButton() throws MePOSException
 
@@ -355,11 +355,11 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### boolean MePOSConnectDefault()
 
-  Sets the MePOS unit as factory settings.
+  Sets the MePOS unit as factory settings, must call enableWiFi() before invoking this method to garantee the correct configuration of the module.
 
 ### boolean MePOSConnectEthernet(String ipAddress, String netMask)
 
-  Set the MePOS unit to a network as a client using an Ethernet connection.
+  Set the MePOS unit to a network as a client using an Ethernet connection, must call enableWiFi() before invoking this method to garantee the correct configuration of the module.
 
   Valid input parameters are:
 
@@ -369,11 +369,11 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### boolean MePOSConnectEthernet()
 
-  Set the MePOS unit to a network as a client using an Ethernet connection and as DHCP. Same as MePOSConnectEthernet(“DHCP”, null)
+  Set the MePOS unit to a network as a client using an Ethernet connection and as DHCP, must call enableWiFi() before invoking this method to garantee the correct configuration of the module. Same as MePOSConnectEthernet(“DHCP”, null)
 
 ### boolean MePOSConnectWiFi(String SSID, String IPAddress, String netmask, String encryption, String password)
 
-  Connects the MePOS unit to a WiFi network as a client. After performing a Wi-Fi connection, the setConnectionIPAddress method must be called with the provided static IP address or the assigned DHCP IP address using the MePOSGetAssignedIP() method. If the MePOS unit is being used as an access point, connecting to a Wi-Fi network will switch the MePOS to becoming a Wi-Fi client and the MePOS unit will no longer be a Wi-Fi access point. It is only possible to configure the WiFi module when the MePOS unit is plugged in via USB, a call to this method will return false if no USB connection is found.
+  Connects the MePOS unit to a WiFi network as a client, must call enableWiFi() before invoking this method to garantee the correct configuration of the module. After performing a Wi-Fi connection, the setConnectionIPAddress method must be called with the provided static IP address or the assigned DHCP IP address using the MePOSGetAssignedIP() method. If the MePOS unit is being used as an access point, connecting to a Wi-Fi network will switch the MePOS to becoming a Wi-Fi client and the MePOS unit will no longer be a Wi-Fi access point. It is only possible to configure the WiFi module when the MePOS unit is plugged in via USB, a call to this method will return false if no USB connection is found.
 
   Valid input parameters are:
 
@@ -391,9 +391,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
  ***boolean MePOSSetAccessPoint(String SSID, String encryption, String password)***
 
- Sets the MePOS unit in to access point mode. When entering access point mode, the MePOS unit will create its own Wi-Fi network with the SSID, encryption and password provided. In access point mode the MePOS unit will create the IP network 192.168.16.0 and will get the IP address 192.168.16.254. Clients connecting to the
-MePOS unit will be automatically assigned IP addresses via DHCP. If the MePOS unit is connected to a Wi-Fi network as a client, setting the MePOS unit in access point mode will remove the MePOS unit from any Wi-Fi networks it is connected to in client mode. It is only possible to configure the WiFi module when the MePOS
-unit is plugged in via USB, a call to this method will return false if no USB connection is found.
+ Sets the MePOS unit in to access point mode, must call enableWiFi() before invoking this method to garantee the correct configuration of the module. When entering access point mode, the MePOS unit will create its own Wi-Fi network with the SSID, encryption and password provided. In access point mode the MePOS unit will create the IP network 192.168.16.0 and will get the IP address 192.168.16.254. Clients connecting to the MePOS unit will be automatically assigned IP addresses via DHCP. If the MePOS unit is connected to a Wi-Fi network as a client, setting the MePOS unit in access point mode will remove the MePOS unit from any Wi-Fi networks it is connected to in client mode. It is only possible to configure the WiFi module when the MePOS unit is plugged in via USB, a call to this method will return false if no USB connection is found.
 
   SSID – The SSID of the Wi-Fi network you are creating.
 
