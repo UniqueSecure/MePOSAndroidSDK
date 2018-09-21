@@ -1,4 +1,4 @@
-# MePOS Connect Android SDK version 1.22.2.2
+# MePOS Connect Android SDK version 1.23
 
 The MePOS connect SDK is designed to allow communication from a tablet to the MePOS host unit. SDK libraries are
 currently available for Android and Windows.
@@ -21,6 +21,7 @@ your MePOS unit.
   - [int setLedOneCol(Integer colour), int setLedTwoCol(Integer colour), int setLedThreeCol(Integer colour)](#int-setledonecolinteger-colour-int-setledtwocolinteger-colour-int-setledthreecolinteger-colour)
   - [int setCosmeticLedCol(Integer colour)](#int-setcosmeticledcolinteger-colour)
   - [boolean printerBusy()](#boolean-printerbusy)
+  - [boolean loadImage(Bitmap image) throws MePOSException](#boolean-loadimagebitmap-image-throws-meposexception)
   - [int print(MePOSReceipt receipt)](#int-printmeposreceipt-receipt)
   - [int print(MePOSReceipt receipt, MePOSPrinterCallback callback)](#int-printmeposreceipt-receipt-meposprintercallback-callback)
   - [int printRAW(String command)](#meposreceipt-r--new-meposreceipt)
@@ -224,6 +225,10 @@ Will set the MePOS cosmetic LED to one of the following colours:
   - MePOSColorCodes.COSMETIC_YELLOW
 
   - MePOSColorCodes.COSMETIC_WHITE
+
+### boolean loadImage(Bitmap image) throws MePOSException
+
+  Loads the image to the printer
 
 ### boolean printerBusy()
 
