@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.23 SDK (September 21, 2018)
+- Fixed loadImage(Bitmap image) method.
+
 ### MePOS 1.22.2.2 SDK (April 16, 2018)
 - Fixed issues with enableUSB(), disableUSB(), enableWifi() and disableWifi() methods.
 
