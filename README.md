@@ -61,6 +61,7 @@ your MePOS unit.
   - [MePOSReceiptBarcodeLine(int type, String data)](#meposreceiptbarcodelineint-type-string-data)
   - [MePOSReceiptFeedLine(int lines)](#meposreceiptfeedlineint-lines)
   - [MePOSReceiptImageLine(Bitmap image)](#meposreceiptimagelinebitmap-image)
+  - [MePOSReceiptImageBufferLine()](#meposreceiptimagebufferline)
   - [MePOSReceiptPriceLine(String leftText, int leftStyle, String rightText, int rightStyle)](#meposreceiptpricelinestring-lefttext-int-leftstyle-string-righttext-int-rightstyle)
   - [MePOSReceiptSingleCharLine(char chr)](#meposreceiptsinglecharlinechar-chr)
   - [MePOSReceiptSingleCharLine(char chr)](#meposreceipttextlinestring-text-int-style-int-size-int-position)
@@ -228,7 +229,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
 ### boolean loadImage(Bitmap image) throws MePOSException
 
-  Loads the image to the printer
+  Loads the image to the printer, it is advisable to load the image to the printer about 2-3 seconds before trying to print it from memory.
 
 ### boolean printerBusy()
 
@@ -467,6 +468,15 @@ Will set the MePOS cosmetic LED to one of the following colours:
   The following example shows how to add an image to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
   ***r.AddLine(new MePOSReceiptImageLine(bitmap);***
+  ***r.AddLine(new MePOSReceiptImageLine(image);***
+
+### MePOSReceiptImageBufferLine()
+
+  The image buffer line can be used to print the image loaded to the printer
+
+  The following example shows how to add an image to a receipt:
+  ***MePOSReceipt r = new MePOSReceipt();***
+  ***r.AddLine(new MePOSReceiptImageBufferLine();***
 
 ### MePOSReceiptPriceLine(String leftText, int leftStyle, String rightText, int rightStyle)
 
