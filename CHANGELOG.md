@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.24 SDK (October 14, 2019)
+- Fixed printRAW(String data) method, will work regarding of the size of the string.
+
 ### MePOS 1.23 SDK (September 21, 2018)
 - Fixed loadImage(Bitmap image) method.
 
