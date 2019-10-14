@@ -448,7 +448,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   The following example shows how to add a barcode to a receipt:
 ### MePOSReceipt r = new MePOSReceipt();
-### r.AddLine(new MePOSReceiptBarcodeLine(MePOS.BARCODE_TYPE_PDF417, “Hello World!”);
+### r.addLine(new MePOSReceiptBarcodeLine(MePOS.BARCODE_TYPE_PDF417, “Hello World!”);
 
   By default, the Barcode prints a human-interface readable string below, and a defined height of around 0.35 inches. If you want to customise the height or the hri, please use this constructor instead:
 ### new MePOSReceiptBarcodeLine(MePOS.BARCODE_TYPE_CODE39, MePOS.BARCODE_HRI_NONE, 0.50, “Hello World!”);
@@ -460,15 +460,15 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   The following example shows how to feed 10 lines on a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
-  ***r.AddLine(new MePOSReceiptFeedLine(10);***
+  ***r.addLine(new MePOSReceiptFeedLine(10);***
 
 ### MePOSReceiptImageLine(Bitmap image)
   The image line can be used to print black and white raster graphics to the printer. The bitmap provided must be a valid Android.graphics.Bitmap for Anroid or System.Drawing.Bitmap for Windows, the image size should be 576 x 200 pixels
 
   The following example shows how to add an image to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
-  ***r.AddLine(new MePOSReceiptImageLine(bitmap);***
-  ***r.AddLine(new MePOSReceiptImageLine(image);***
+  ***r.addLine(new MePOSReceiptImageLine(bitmap);***
+  ***r.addLine(new MePOSReceiptImageLine(image);***
 
 ### MePOSReceiptImageBufferLine()
 
@@ -476,7 +476,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   The following example shows how to add an image to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
-  ***r.AddLine(new MePOSReceiptImageBufferLine();***
+  ***r.addLine(new MePOSReceiptImageBufferLine();***
 
 ### MePOSReceiptPriceLine(String leftText, int leftStyle, String rightText, int rightStyle)
 
@@ -484,7 +484,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   The following example shows how to add a price line to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
-  ***r.AddLine(new MePOSReceiptPriceLine(“Some Item”, MePOS.TEXT_STYLE_NONE, “Some Price”, MePOS.TEXT_STYLE_NONE);***
+  ***r.addLine(new MePOSReceiptPriceLine(“Some Item”, MePOS.TEXT_STYLE_NONE, “Some Price”, MePOS.TEXT_STYLE_NONE);***
 
 ### MePOSReceiptSingleCharLine(char chr)
   The single character line can be used to fill a single line with the same character. The parameter is the character to repeat across the whole line.
@@ -492,7 +492,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
   The following example shows how to add a single character line to a receipt:
 
   ***MePOSReceipt r = new MePOSReceipt();***
-  ***.AddLine(new MePOSReceiptSingleCharLine(‘.’);***
+  ***r.addLine(new MePOSReceiptSingleCharLine(‘.’);***
 
 ### MePOSReceiptTextLine(String text, int style, int size, int position)
 
@@ -500,7 +500,7 @@ Will set the MePOS cosmetic LED to one of the following colours:
 
   The following example shows how to add a text line to a receipt:
   ***MePOSReceipt r = new MePOSReceipt();***
-  ***r.AddLine(new MePOSReceiptTextLine(“Hello World!”, MePOS.TEXT_STYLE_NONE, MePOS.TEXT_SIZE_NORMAL, MePOS.TEXT_POSITION_CENTER);***
+  ***r.addLine(new MePOSReceiptTextLine(“Hello World!”, MePOS.TEXT_STYLE_NONE, MePOS.TEXT_SIZE_NORMAL, MePOS.TEXT_POSITION_CENTER);***
 
 ### Text style constants
   Some of the printer line commands accept a style parameter. This parameter can be any one of the following constants:
