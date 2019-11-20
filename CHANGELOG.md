@@ -1,6 +1,9 @@
 MePOS Android SDK release notes
 ================================
 
+### MePOS 1.25 SDK (November 20, 2019)
+- Added the method printRAW(byte\[\]\[\] data, MePOSPrinterCallback callback).
+
 ### MePOS 1.24 SDK (October 14, 2019)
 - Fixed printRAW(String data) method, will work regarding of the size of the string.
 
